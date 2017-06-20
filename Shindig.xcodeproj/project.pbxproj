@@ -14,6 +14,8 @@
 		9240D47B1EF9225300F54FC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9240D47A1EF9225300F54FC3 /* Assets.xcassets */; };
 		9240D47E1EF9225300F54FC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9240D47C1EF9225300F54FC3 /* LaunchScreen.storyboard */; };
 		9240D4861EF92DA600F54FC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9240D4851EF92DA600F54FC3 /* GoogleService-Info.plist */; };
+		9240D4AE1EF9746E00F54FC3 /* Shindig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9240D4AD1EF9746E00F54FC3 /* Shindig.swift */; };
+		9240D4B01EF9748F00F54FC3 /* ShindigRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9240D4AF1EF9748F00F54FC3 /* ShindigRealm.swift */; };
 		A10A442A1EF944DD00DBA48B /* PlanningShindigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A44291EF944DD00DBA48B /* PlanningShindigTableViewController.swift */; };
 		A10A442C1EF944F800DBA48B /* AttendingShindigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A442B1EF944F800DBA48B /* AttendingShindigTableViewController.swift */; };
 		A10A44321EF9459B00DBA48B /* AddShindigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A44311EF9459B00DBA48B /* AddShindigViewController.swift */; };
@@ -35,6 +37,8 @@
 		9240D47D1EF9225300F54FC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9240D47F1EF9225300F54FC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9240D4851EF92DA600F54FC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9240D4AD1EF9746E00F54FC3 /* Shindig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shindig.swift; sourceTree = "<group>"; };
+		9240D4AF1EF9748F00F54FC3 /* ShindigRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShindigRealm.swift; sourceTree = "<group>"; };
 		A10A44291EF944DD00DBA48B /* PlanningShindigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningShindigTableViewController.swift; sourceTree = "<group>"; };
 		A10A442B1EF944F800DBA48B /* AttendingShindigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendingShindigTableViewController.swift; sourceTree = "<group>"; };
 		A10A44311EF9459B00DBA48B /* AddShindigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShindigViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				9240D4731EF9225200F54FC3 /* AppDelegate.swift */,
+				9240D4AD1EF9746E00F54FC3 /* Shindig.swift */,
+				9240D4AF1EF9748F00F54FC3 /* ShindigRealm.swift */,
 				9240D4771EF9225300F54FC3 /* Main.storyboard */,
 				A10A44471EF9507000DBA48B /* Profile */,
 				A10A44461EF9505B00DBA48B /* Add Shindig */,
@@ -286,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9240D4B01EF9748F00F54FC3 /* ShindigRealm.swift in Sources */,
 				A10A44361EF9466E00DBA48B /* HPOverviewViewController.swift in Sources */,
 				A10A44341EF945BC00DBA48B /* ProfileTableViewController.swift in Sources */,
 				9240D4761EF9225300F54FC3 /* ViewController.swift in Sources */,
@@ -296,6 +303,7 @@
 				A10A443E1EF9482000DBA48B /* InviteFriendsTableViewController.swift in Sources */,
 				A10A44401EF9488E00DBA48B /* AddSuppliesTableViewController.swift in Sources */,
 				A10A44321EF9459B00DBA48B /* AddShindigViewController.swift in Sources */,
+				9240D4AE1EF9746E00F54FC3 /* Shindig.swift in Sources */,
 				A10A442C1EF944F800DBA48B /* AttendingShindigTableViewController.swift in Sources */,
 				A10A44381EF946CB00DBA48B /* HPSuppliesTableViewController.swift in Sources */,
 			);
