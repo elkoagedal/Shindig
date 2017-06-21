@@ -17,6 +17,10 @@ class AddShindigViewController: UIViewController {
     
     var ref : DatabaseReference!
         //DatabaseReference? = Database.database().reference()
+    
+    var numSupplies = 0
+    
+    var key : String?
 
     
     @IBOutlet weak var numPeopleTextField: UITextField!
@@ -29,12 +33,31 @@ class AddShindigViewController: UIViewController {
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var shindigDetailsTextView: UITextView!
     
+    @IBAction func addSupply(_ sender: Any) {
+        ref = Database.database().reference()
+        if (key == nil) {
+            key = self.ref?.childByAutoId().key
+        }
+        
+        numSupplies = numSupplies + 1
+        
+        ref?.child("Events").child(key!).child("supplies").child(supplyNameTextField.text!).child("supply price").setValue(priceRangeTextField.text)
+        ref?.child("Events").child(key!).child("supplies").child(supplyNameTextField.text!).child("num people").setValue(numPeopleTextField.text)
+        
+        priceRangeTextField.text = ""
+        supplyNameTextField.text = ""
+        numPeopleTextField.text = ""
+    }
+    
+    
+    
     @IBAction func doneButton(_ sender: Any) {
         ref = Database.database().reference()
         print("here")
         print(ref)
-        
-        var key = self.ref?.childByAutoId().key
+        if (key == nil) {
+            key = self.ref?.childByAutoId().key
+        }
         ref?.child("Events").child(key!).child("date").setValue(dateTextField.text)
         ref?.child("Events").child(key!).child("location").setValue(locationTextField.text)
         ref?.child("Events").child(key!).child("time").setValue(timeTextField.text)
