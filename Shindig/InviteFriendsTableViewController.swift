@@ -7,16 +7,38 @@
 //
 
 import UIKit
-import FBSDKLoginKit
+
 import FBSDKCoreKit
+import FacebookCore
+import FacebookLogin
+
 
 class InviteFriendsTableViewController: UITableViewController {
 
+
     var key : String?
+    var userData: [String:Any] = [:]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let params = ["fields": "id, first_name, last_name, name, email, picture"]
+        
+        let graphRequest = FBSDKGraphRequest(graphPath: "/me/friends", parameters: params)
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(graphRequest, completionHandler: { (connection, result, error) in
+            if error == nil {
+                if let userData = result as? [String:Any] {
+                    print(userData)
+                }
+            } else {
+                print("Error Getting Friends \(error)");
+            }
+            
+        })
+        
+        connection.start()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,23 +55,24 @@ class InviteFriendsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return Int(userData.count)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        // cell.textLabel?.text =
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

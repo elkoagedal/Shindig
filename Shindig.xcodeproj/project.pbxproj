@@ -27,7 +27,6 @@
 		A10A443E1EF9482000DBA48B /* InviteFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A443D1EF9482000DBA48B /* InviteFriendsTableViewController.swift */; };
 		A10A44401EF9488E00DBA48B /* AddSuppliesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A443F1EF9488E00DBA48B /* AddSuppliesTableViewController.swift */; };
 		A11D9E351EFA7BB8005E224B /* AddShindigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D9E341EFA7BB8005E224B /* AddShindigViewController.swift */; };
-		DCF1F0041EFAA2D400FA98C9 /* FBFriendPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F0031EFAA2D400FA98C9 /* FBFriendPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +53,6 @@
 		A11D9E341EFA7BB8005E224B /* AddShindigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShindigViewController.swift; sourceTree = "<group>"; };
 		A68FF08A828F8AE1AA37FFC4 /* Pods_Shindig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shindig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE5B05BCCE1816641D96F01 /* Pods-Shindig.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shindig.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shindig/Pods-Shindig.release.xcconfig"; sourceTree = "<group>"; };
-		DCF1F0031EFAA2D400FA98C9 /* FBFriendPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFriendPickerViewController.swift; sourceTree = "<group>"; };
 		F9390088347DB272ED86A611 /* Pods-Shindig.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shindig.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shindig/Pods-Shindig.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +119,6 @@
 				9240D47C1EF9225300F54FC3 /* LaunchScreen.storyboard */,
 				9240D4851EF92DA600F54FC3 /* GoogleService-Info.plist */,
 				9240D47F1EF9225300F54FC3 /* Info.plist */,
-				DCF1F0031EFAA2D400FA98C9 /* FBFriendPickerViewController.swift */,
 			);
 			path = Shindig;
 			sourceTree = "<group>";
@@ -300,7 +297,6 @@
 			files = (
 				9240D4B01EF9748F00F54FC3 /* ShindigRealm.swift in Sources */,
 				A10A44361EF9466E00DBA48B /* HPOverviewViewController.swift in Sources */,
-				DCF1F0041EFAA2D400FA98C9 /* FBFriendPickerViewController.swift in Sources */,
 				A10A44341EF945BC00DBA48B /* ProfileTableViewController.swift in Sources */,
 				9240D4761EF9225300F54FC3 /* ViewController.swift in Sources */,
 				A10A442A1EF944DD00DBA48B /* PlanningShindigTableViewController.swift in Sources */,
