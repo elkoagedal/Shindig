@@ -56,6 +56,16 @@ class ProfileTableViewController: UITableViewController {
         return 0
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Some navigation Items
+        if indexPath.section == 2 && indexPath.row == 3 {
+            self.tabBarController?.selectedIndex = 1
+        }
+        if indexPath.section == 2 && indexPath.row == 4 {
+            self.tabBarController?.selectedIndex = 0
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
