@@ -14,7 +14,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let loginButton = LoginButton(readPermissions: [ .publicProfile])
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .userFriends])
         loginButton.delegate = self
         loginButton.center = view.center
         view.addSubview(loginButton)
