@@ -26,6 +26,7 @@
 		A10A443E1EF9482000DBA48B /* InviteFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A443D1EF9482000DBA48B /* InviteFriendsTableViewController.swift */; };
 		A10A44401EF9488E00DBA48B /* AddSuppliesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A443F1EF9488E00DBA48B /* AddSuppliesTableViewController.swift */; };
 		A11D9E351EFA7BB8005E224B /* AddShindigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D9E341EFA7BB8005E224B /* AddShindigViewController.swift */; };
+		A11D9E371EFAC56D005E224B /* EditYourShindigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D9E361EFAC56D005E224B /* EditYourShindigViewController.swift */; };
 		DCF1F0041EFAA2D400FA98C9 /* FBFriendPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F0031EFAA2D400FA98C9 /* FBFriendPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		A10A443D1EF9482000DBA48B /* InviteFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsTableViewController.swift; sourceTree = "<group>"; };
 		A10A443F1EF9488E00DBA48B /* AddSuppliesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSuppliesTableViewController.swift; sourceTree = "<group>"; };
 		A11D9E341EFA7BB8005E224B /* AddShindigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShindigViewController.swift; sourceTree = "<group>"; };
+		A11D9E361EFAC56D005E224B /* EditYourShindigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditYourShindigViewController.swift; sourceTree = "<group>"; };
 		A68FF08A828F8AE1AA37FFC4 /* Pods_Shindig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shindig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE5B05BCCE1816641D96F01 /* Pods-Shindig.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shindig.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shindig/Pods-Shindig.release.xcconfig"; sourceTree = "<group>"; };
 		DCF1F0031EFAA2D400FA98C9 /* FBFriendPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFriendPickerViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				A10A44291EF944DD00DBA48B /* PlanningShindigTableViewController.swift */,
 				A10A44351EF9466E00DBA48B /* HPOverviewViewController.swift */,
 				A10A44371EF946CB00DBA48B /* HPSuppliesTableViewController.swift */,
+				A11D9E361EFAC56D005E224B /* EditYourShindigViewController.swift */,
 			);
 			name = "Planning Shindig";
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				A10A442A1EF944DD00DBA48B /* PlanningShindigTableViewController.swift in Sources */,
 				9240D4741EF9225200F54FC3 /* AppDelegate.swift in Sources */,
 				A10A443A1EF9475900DBA48B /* IPOverviewViewController.swift in Sources */,
+				A11D9E371EFAC56D005E224B /* EditYourShindigViewController.swift in Sources */,
 				A11D9E351EFA7BB8005E224B /* AddShindigViewController.swift in Sources */,
 				A10A443C1EF9479900DBA48B /* IPSuppliesTableViewController.swift in Sources */,
 				A10A443E1EF9482000DBA48B /* InviteFriendsTableViewController.swift in Sources */,
