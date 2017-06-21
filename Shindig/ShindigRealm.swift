@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Realm
 import RealmSwift
+import Realm
 
 class ShindigRealm : RLMObject {
     
