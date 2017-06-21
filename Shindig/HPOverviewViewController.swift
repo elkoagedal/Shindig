@@ -59,14 +59,34 @@ class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
                 print(snapshot)
                 let dict1 = snapshot.value as! NSDictionary
                 
-                /*for (key, value) in dict1 {
-                    self.supplies.append(key as! String)
-                    print(key)
-                    self.tableView.reloadData()
+                for (key, value) in dict1 {
+                    if ((key as! String) == "date") {
+                        self.dateLabel.text = value as! String
+                    }
+                    
+                    if ((key as! String) == "details") {
+                        self.detailsLabel.text = value as! String
+                    }
+                    
+                    if ((key as! String) == "location") {
+                        self.locationLabel.text = value as! String
+                    }
+                    
+                    /*if (key == "name") {
+                        nameLable.text = value
+                    }
                     */
+                    
+                    if ((key as! String) == "price") {
+                        self.priceLabel.text = value as! String
+                    }
+                    
+                    if ((key as! String) == "time") {
+                        self.timeLabel.text = value as! String
+                    }
             
+                }
             }
-            
         })
 
         
