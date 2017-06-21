@@ -7,11 +7,46 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class AddSuppliesTableViewController: UITableViewController {
+    
+    var key : String?
+    var reference : DatabaseReference = Database.database().reference().child("Events")
+    var supplies : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var ref = reference.child(key!).child("supplies")
+        var dat = ref.observe(.value, with: { (snapshot) in
+            
+            // If no supplies exist, display alert
+            if !snapshot.exists() {
+                print(snapshot)
+                let alertController = UIAlertController(title: "No Supplies Found", message: " ", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
+                
+                
+            // Put supplies in the supplies array
+            else {
+                print("here")
+                let dict1 = snapshot.value as! NSDictionary
+                
+                for (key, value) in dict1 {
+                    self.supplies.append(key as! String)
+                    print(key)
+                    self.tableView.reloadData()
+                    
+                }
+            }
+            
+        })
+
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,12 +64,21 @@ class AddSuppliesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return supplies.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "supply", for: indexPath)
+        
+        cell.textLabel?.text = supplies[indexPath.row]
+        
+        return cell
     }
 
     /*

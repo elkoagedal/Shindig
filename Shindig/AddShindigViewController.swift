@@ -33,6 +33,7 @@ class AddShindigViewController: UIViewController {
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var shindigDetailsTextView: UITextView!
     
+    
     @IBAction func addSupply(_ sender: Any) {
         ref = Database.database().reference()
         if (key == nil) {
@@ -105,6 +106,14 @@ class AddShindigViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToSupplyList") {
+            let add = segue.destination as! AddSuppliesTableViewController
+            add.key = key
+        }
+    }
+    
 
 }
 
