@@ -39,12 +39,21 @@ class ProfileTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        if section == 0 {
+            return 1
+        }
+        if section == 1 {
+            return 1
+        }
+        if section == 2 {
+            return 5
+        }
+        return 0
     }
 
     /*
