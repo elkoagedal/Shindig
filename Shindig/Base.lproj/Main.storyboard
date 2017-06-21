@@ -557,9 +557,7 @@
                     <navigationItem key="navigationItem" title="Add Shindig" id="uOs-ST-J9H">
                         <barButtonItem key="leftBarButtonItem" title="Done" id="deY-Du-F3C">
                             <connections>
-
                                 <action selector="doneButton:" destination="l9I-Ta-UPj" id="HkY-7W-1cI"/>
-
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Supplies" systemItem="add" id="oNl-ks-kTb">
@@ -674,7 +672,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GcT-gr-GkX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GcT-gr-GkX">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GcT-gr-GkX" id="Cid-Je-5dj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>

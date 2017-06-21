@@ -17,6 +17,8 @@ class AddShindigViewController: UIViewController {
     
     var ref : DatabaseReference!
         //DatabaseReference? = Database.database().reference()
+    
+    var numSupplies = 0
 
     
     @IBOutlet weak var numPeopleTextField: UITextField!
