@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import CircleAnimatedMenu
 
 class HPOverviewViewController: UIViewController {
+    
+    @IBOutlet weak var testMenu: CircleAnimatedMenu!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        testMenu.imageSize = 40
+        testMenu.outerRadius = 150
+        testMenu.innerRadius = 50
+        testMenu.closerBorderWidth = 0
+        testMenu.menuWidthLine = 1
+        testMenu.titleFont = UIFont.systemFont(ofSize: 14)
+        testMenu.delegate = self as? CircleAnimatedMenuDelegate
+        testMenu.highlightedColors = [.red, .orange, .yellow, .green, .blue, .cyan, .purple]
+        testMenu.tuplesArray = [("Facebook-1", "Facebook"), ("instagram-1", "Instagram"), ("Twitter", "Twitter"),
+                                ("LinkedIn", "LinkedIn"), ("Google Plus +", "GooglePlus"), ("Pinterest", "Pinterest"),
+                                ("RSS", "RSS"), ("YouTube", "YouTube"), ("Bloglovin", "Bloglovin"),
+                                ("Emai", "Email"), ("Flickr", "Flickr"), ("github", "GitHub")]
     }
 
+/*
+    extension HPOverviewViewController: CircleAnimatedMenuDelegate {
+        func sectionSelected(text: String, index: Int) {
+            print("text - \(text), index - \(index)")
+        }
+    }
+*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

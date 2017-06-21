@@ -8,8 +8,18 @@
 
 import UIKit
 
+/*
+class YourCustomCell: UITableViewCell {
+    
+    @IBOutlet weak var ShindigName: UILabel!
+    @IBOutlet weak var HostLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
+    @IBOutlet weak var ProfileImage: UIImageView!
+}
+ */
 class PlanningShindigTableViewController: UITableViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,12 +39,12 @@ class PlanningShindigTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
     /*

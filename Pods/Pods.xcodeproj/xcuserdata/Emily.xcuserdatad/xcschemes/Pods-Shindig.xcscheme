@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3EC52BF72C76128726EE9199B110442"
+               BlueprintIdentifier = "BF91678BBD0643A5F4466EBADB54172B"
                BuildableName = "Pods_Shindig.framework"
                BlueprintName = "Pods-Shindig"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F3EC52BF72C76128726EE9199B110442"
+            BlueprintIdentifier = "BF91678BBD0643A5F4466EBADB54172B"
             BuildableName = "Pods_Shindig.framework"
             BlueprintName = "Pods-Shindig"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F3EC52BF72C76128726EE9199B110442"
-            BuildableName = "Pods_Shindig.framework"
-            BlueprintName = "Pods-Shindig"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -14,6 +14,9 @@ target 'Shindig' do
 
   pod 'RealmSwift'
 
+  pod "CircleAnimatedMenu"
+
+
   # Pods for Shindig
 
 end
