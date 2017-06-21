@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class InviteFriendsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let params = ["fields": "id, first_name, last_name, name, email, picture"]
+        
+        let graphRequest = FBSDKGraphRequest(graphPath: "/me/friends", parameters: params)
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(graphRequest, completionHandler: { (connection, result, error) in
+            if error == nil {
+                if let userData = result as? [String:Any] {
+                    print(userData)
+                }
+            } else {
+                print("Error Getting Friends \(error)");
+            }
+            
+        })
+        
+        connection.start()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
