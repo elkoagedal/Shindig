@@ -8,13 +8,54 @@
 
 import UIKit
 import CircleAnimatedMenu
+import Firebase
+import FirebaseDatabase
+import Realm
+import RealmSwift
 
 class AddShindigViewController: UIViewController {
+    
+    var ref : DatabaseReference!
+        //DatabaseReference? = Database.database().reference()
 
     @IBOutlet weak var testMenu: CircleAnimatedMenu!
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var shindigDetailsTextView: UITextView!
+    
+    @IBAction func doneButton(_ sender: Any) {
+        ref = Database.database().reference()
+        print("here")
+        print(ref)
+        
+        var key = self.ref?.childByAutoId().key
+        ref?.child("Events").child(key!).child("date").setValue(dateTextField.text)
+        ref?.child("Events").child(key!).child("location").setValue(locationTextField.text)
+        ref?.child("Events").child(key!).child("time").setValue(timeTextField.text)
+        ref?.child("Events").child(key!).child("price").setValue(priceTextField.text)
+        ref?.child("Events").child(key!).child("details").setValue(shindigDetailsTextView.text)
+        print("added")
+        
+        let event = ShindigRealm()
+        event.key = key
+        
+        let realm = RLMRealm.default()
+        realm.beginWriteTransaction()
+        realm.add(event)
+        do {
+            try realm.commitWriteTransactionWithoutNotifying([])
+        } catch {
+            print("Error")
+        }
+        print("realm")
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         testMenu.imageSize = 40
         testMenu.outerRadius = 150
@@ -51,3 +92,18 @@ class AddShindigViewController: UIViewController {
     */
 
 }
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
+
