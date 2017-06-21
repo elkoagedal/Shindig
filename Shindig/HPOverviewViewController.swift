@@ -8,11 +8,21 @@
 
 import UIKit
 import CircleAnimatedMenu
+import Firebase
+import FirebaseDatabase
 
 class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
     
+    var key : String?
+    
     @IBOutlet weak var testMenu: CircleAnimatedMenu!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var totalPoolLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +42,36 @@ class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
                                 ("RSS", "RSS"), ("YouTube", "YouTube"), ("Bloglovin", "Bloglovin"),
                                 ("Emai", "Email"), ("Flickr", "Flickr"), ("github", "GitHub")]
         testMenu.reloadInputViews()
+        
+        var ref = Database.database().reference().child("Events").child(key!)
+        var dat = ref.observe(.value, with: { (snapshot) in
+            
+            // If no supplies exist, display alert
+            if !snapshot.exists() {
+                let alertController = UIAlertController(title: "No Supplies Found", message: " ", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
+                
+                
+                // Put supplies in the supplies array
+            else {
+                print(snapshot)
+                let dict1 = snapshot.value as! NSDictionary
+                
+                /*for (key, value) in dict1 {
+                    self.supplies.append(key as! String)
+                    print(key)
+                    self.tableView.reloadData()
+                    */
+            
+            }
+            
+        })
+
+        
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

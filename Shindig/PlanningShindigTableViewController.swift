@@ -112,14 +112,23 @@ class PlanningShindigTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "myEventDetails") {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)
+            
+            let details = segue.destination as! UINavigationController
+            let details2 = details.topViewController as! HPOverviewViewController
+            
+            details2.key = myEvents.object(at: UInt((indexPath?.row)!)).key
+        }
     }
-    */
+    
 
 }
