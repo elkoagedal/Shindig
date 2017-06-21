@@ -524,7 +524,7 @@
                                 </constraints>
                                 <state key="normal" title="Go To Your Supplies"/>
                                 <connections>
-                                    <segue destination="fcJ-gk-4qp" kind="show" id="r8I-oe-OVu"/>
+                                    <segue destination="fcJ-gk-4qp" kind="show" identifier="goToSupplyList" id="65v-Ek-qOv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Supply Below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDl-0x-ZfM">
@@ -658,7 +658,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3aj-Qu-nRE" detailTextLabel="HnZ-4G-zUw" imageView="xVt-Zn-RA2" style="IBUITableViewCellStyleSubtitle" id="lN4-R5-s1d">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="supply" textLabel="3aj-Qu-nRE" detailTextLabel="HnZ-4G-zUw" imageView="xVt-Zn-RA2" style="IBUITableViewCellStyleSubtitle" id="lN4-R5-s1d">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lN4-R5-s1d" id="ufq-PW-Bh0">
@@ -700,18 +700,27 @@
         <!--Add Supplies Table View Controller-->
         <scene sceneID="i37-sL-Zc0">
             <objects>
-                <tableViewController id="fcJ-gk-4qp" customClass="AddSuppliesTableViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="supplyList" id="fcJ-gk-4qp" customClass="AddSuppliesTableViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9hD-k1-gXb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lBQ-ZE-PaN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="supply" textLabel="WIF-GZ-Cag" style="IBUITableViewCellStyleDefault" id="lBQ-ZE-PaN">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lBQ-ZE-PaN" id="pdS-E1-tAc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WIF-GZ-Cag">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
