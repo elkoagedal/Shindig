@@ -11,7 +11,7 @@ import RealmSwift
 import Realm
 
 class ShindigRealm : RLMObject {
-    
+    /*
     dynamic var host: String?
     dynamic var key : String?
     dynamic var date : String?
@@ -22,6 +22,8 @@ class ShindigRealm : RLMObject {
     dynamic var price = 0
     dynamic var supplies = [String]()
     dynamic var time : String?
+    */
     
+    dynamic var key : String?
     
 }
