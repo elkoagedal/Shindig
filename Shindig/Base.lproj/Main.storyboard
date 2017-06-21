@@ -185,6 +185,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Your Shindig" id="iGg-fN-858">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="n2o-Jt-Y7t">
+                            <connections>
+                                <segue destination="l9I-Ta-UPj" kind="show" id="res-eh-fVN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Supplies" id="62N-7o-y2U">
                             <connections>
                                 <segue destination="Pnr-vy-NW9" kind="show" id="74A-et-LHH"/>
@@ -457,6 +462,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-cj-LyU">
+                                <rect key="frame" x="32" y="428" width="144" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price Per Person $" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TOG-5P-nRw">
+                                <rect key="frame" x="184" y="428" width="154" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ucM-rI-E9W">
                                 <rect key="frame" x="67" y="515" width="240" height="95"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -499,6 +516,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Shindig" id="uOs-ST-J9H">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="HyW-6s-X6z"/>
                         <rightBarButtonItems>
                             <barButtonItem title="Supplies" systemItem="add" id="oNl-ks-kTb">
                                 <connections>
@@ -851,4 +869,7 @@
         <image name="user-2.png.300x200_q85_crop" width="32" height="32"/>
         <image name="wedding-planning" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="res-eh-fVN"/>
+    </inferredMetricsTieBreakers>
 </document>
