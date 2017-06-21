@@ -18,7 +18,11 @@ class AddShindigViewController: UIViewController {
     var ref : DatabaseReference!
         //DatabaseReference? = Database.database().reference()
 
-    @IBOutlet weak var testMenu: CircleAnimatedMenu!
+    
+    @IBOutlet weak var numPeopleTextField: UITextField!
+    @IBOutlet weak var priceRangeTextField: UITextField!
+    @IBOutlet weak var supplyNameTextField: UITextField!
+    @IBOutlet weak var shindigNameTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
@@ -36,10 +40,11 @@ class AddShindigViewController: UIViewController {
         ref?.child("Events").child(key!).child("time").setValue(timeTextField.text)
         ref?.child("Events").child(key!).child("price").setValue(priceTextField.text)
         ref?.child("Events").child(key!).child("details").setValue(shindigDetailsTextView.text)
-        print("added")
+        ref?.child("Events").child(key!).child("name").setValue(shindigNameTextField.text)
         
         let event = ShindigRealm()
         event.key = key
+        event.name = shindigNameTextField.text
         
         let realm = RLMRealm.default()
         realm.beginWriteTransaction()
@@ -57,21 +62,7 @@ class AddShindigViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
-        testMenu.imageSize = 40
-        testMenu.outerRadius = 150
-        testMenu.innerRadius = 50
-        testMenu.closerBorderWidth = 0
-        testMenu.menuWidthLine = 1
-        testMenu.titleFont = UIFont.systemFont(ofSize: 14)
-        testMenu.delegate = self as? CircleAnimatedMenuDelegate
-        testMenu.highlightedColors = [.green, .yellow, .purple, .red, .brown]
-        testMenu.tuplesArray = [("Facebook-1", "Facebook"), ("instagram-1", "Instagram"), ("Twitter", "Twitter"),
-                                ("LinkedIn", "LinkedIn"), ("Google Plus +", "GooglePlus"), ("Pinterest", "Pinterest"),
-                                ("RSS", "RSS"), ("YouTube", "YouTube"), ("Bloglovin", "Bloglovin"),
-                                ("Emai", "Email"), ("Flickr", "Flickr"), ("github", "GitHub")]
         
-        
-
         // Do any additional setup after loading the view.
     }
 
