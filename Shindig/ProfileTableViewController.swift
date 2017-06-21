@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class ProfileTableViewController: UITableViewController {
 
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userFullName: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var BirthdayLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var CollegeLabel: UILabel!
@@ -26,13 +29,17 @@ class ProfileTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-           }
+        
+        }
 
+  
+        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
     
 
@@ -56,6 +63,16 @@ class ProfileTableViewController: UITableViewController {
         return 0
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Some navigation Items
+        if indexPath.section == 2 && indexPath.row == 3 {
+            self.tabBarController?.selectedIndex = 1
+        }
+        if indexPath.section == 2 && indexPath.row == 4 {
+            self.tabBarController?.selectedIndex = 0
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
