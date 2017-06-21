@@ -9,10 +9,11 @@
 import UIKit
 import CircleAnimatedMenu
 
-class HPOverviewViewController: UIViewController {
+class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
     
     @IBOutlet weak var testMenu: CircleAnimatedMenu!
-
+    @IBOutlet weak var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,12 +25,22 @@ class HPOverviewViewController: UIViewController {
         testMenu.closerBorderWidth = 0
         testMenu.menuWidthLine = 1
         testMenu.titleFont = UIFont.systemFont(ofSize: 14)
-        testMenu.delegate = self as? CircleAnimatedMenuDelegate
+        testMenu.delegate = self
         testMenu.highlightedColors = [.red, .orange, .yellow, .green, .blue, .cyan, .purple]
-        testMenu.tuplesArray = [("Facebook-1", "Facebook"), ("instagram-1", "Instagram"), ("Twitter", "Twitter"),
+        testMenu.tuplesArray = [("http://www.freeiconspng.com/uploads/profile-icon-9.png", "Emily"), ("instagram-1", "Instagram"), ("Twitter", "Twitter"),
                                 ("LinkedIn", "LinkedIn"), ("Google Plus +", "GooglePlus"), ("Pinterest", "Pinterest"),
                                 ("RSS", "RSS"), ("YouTube", "YouTube"), ("Bloglovin", "Bloglovin"),
                                 ("Emai", "Email"), ("Flickr", "Flickr"), ("github", "GitHub")]
+        testMenu.reloadInputViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        image.layer.zPosition = 999
+    }
+    
+    func sectionSelected(text: String, index: Int) {
+        print(text)
+        image.image = #imageLiteral(resourceName: "add")
     }
 
 /*
