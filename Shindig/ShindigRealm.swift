@@ -25,5 +25,6 @@ class ShindigRealm : RLMObject {
     */
     
     dynamic var key : String?
+    dynamic var name : String?
     
 }

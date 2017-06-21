@@ -61,7 +61,7 @@ class PlanningShindigTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myEvents", for: indexPath)
         
-        cell.textLabel?.text = myEvents.object(at: UInt(indexPath.row)).key
+        cell.textLabel?.text = myEvents.object(at: UInt(indexPath.row)).name
         
         return cell
     }
