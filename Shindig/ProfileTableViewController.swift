@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class ProfileTableViewController: UITableViewController {
 
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userFullName: UILabel!
+    @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var BirthdayLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var CollegeLabel: UILabel!
@@ -25,9 +28,9 @@ class ProfileTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-           }
+                  }
 
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
