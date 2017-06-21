@@ -19,6 +19,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
         loginButton.center = view.center
         view.addSubview(loginButton)
         
+        
         // Code from facebook 
         /*
     - (void)viewDidLoad
