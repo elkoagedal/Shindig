@@ -304,7 +304,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="diD-iz-Gtb">
-                                                    <rect key="frame" x="66" y="14" width="34" height="20"/>
+                                                    <rect key="frame" x="66" y="14" width="33" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -335,7 +335,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KHU-Yb-amx">
-                                                    <rect key="frame" x="66" y="14" width="34" height="20"/>
+                                                    <rect key="frame" x="66" y="14" width="33" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -363,7 +363,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Je0-Oa-8O0">
-                                                    <rect key="frame" x="66" y="14" width="34" height="20"/>
+                                                    <rect key="frame" x="66" y="14" width="33" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -523,9 +523,6 @@
                                     <constraint firstAttribute="width" constant="144" id="ASI-7i-wQW"/>
                                 </constraints>
                                 <state key="normal" title="Go To Your Supplies"/>
-                                <connections>
-                                    <segue destination="fcJ-gk-4qp" kind="show" id="r8I-oe-OVu"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Supply Below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDl-0x-ZfM">
                                 <rect key="frame" x="75" y="148" width="227" height="50"/>
@@ -697,7 +694,7 @@
         <!--Add Supplies Table View Controller-->
         <scene sceneID="i37-sL-Zc0">
             <objects>
-                <tableViewController id="fcJ-gk-4qp" customClass="AddSuppliesTableViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="supplyList" id="fcJ-gk-4qp" customClass="AddSuppliesTableViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9hD-k1-gXb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -739,6 +736,15 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GcT-gr-GkX" id="6Gd-Be-iLf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dh-Fg-iTa">
+                                                    <rect key="frame" x="14" y="8" width="347" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -888,10 +894,20 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Profile" image="user-2.png.300x200_q85_crop" selectedImage="user-2.png.300x200_q85_crop" id="lGT-ac-k3w"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="AttendingShindigsLabel" destination="xi1-bc-AZP" id="AAI-6e-kWS"/>
+                        <outlet property="BirthdayLabel" destination="8rf-Uh-6V6" id="MJT-SJ-RtK"/>
+                        <outlet property="CollegeLabel" destination="Ndf-hR-MQf" id="nQb-sF-NP0"/>
+                        <outlet property="EmailLabel" destination="P3M-hd-Rn9" id="8Be-Zn-yCf"/>
+                        <outlet property="YourShindigsLabel" destination="d7q-5V-gGs" id="5ut-Px-jZ0"/>
+                        <outlet property="profileImage" destination="hYL-qm-Oc3" id="8Dg-sf-7LK"/>
+                        <outlet property="userFullName" destination="8Dh-Fg-iTa" id="0c3-Mz-cws"/>
+                        <outlet property="userProfileImage" destination="hYL-qm-Oc3" id="TlO-fr-CYK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVX-qs-Wlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503" y="1053"/>
+            <point key="canvasLocation" x="2836" y="615"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nVB-ub-47I">
