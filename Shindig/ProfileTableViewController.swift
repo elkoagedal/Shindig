@@ -10,6 +10,13 @@ import UIKit
 
 class ProfileTableViewController: UITableViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var BirthdayLabel: UILabel!
+    @IBOutlet weak var EmailLabel: UILabel!
+    @IBOutlet weak var CollegeLabel: UILabel!
+    @IBOutlet weak var YourShindigsLabel: UILabel!
+    @IBOutlet weak var AttendingShindigsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +25,8 @@ class ProfileTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
+        
+           }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,14 +34,25 @@ class ProfileTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if section == 0 {
+            return 1
+        }
+        if section == 1 {
+            return 1
+        }
+        if section == 2 {
+            return 5
+        }
         return 0
     }
 

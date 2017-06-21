@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 /*
 class YourCustomCell: UITableViewCell {
@@ -18,6 +20,15 @@ class YourCustomCell: UITableViewCell {
 }
  */
 class PlanningShindigTableViewController: UITableViewController {
+    
+    var event : ShindigRealm?
+    
+    var myEvents : RLMResults<ShindigRealm> {
+        get {
+            return ShindigRealm.allObjects() as! RLMResults<ShindigRealm>
+        }
+    }
+    
     
     
     override func viewDidLoad() {
@@ -39,13 +50,22 @@ class PlanningShindigTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return Int(myEvents.count)
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myEvents", for: indexPath)
+        
+        cell.textLabel?.text = myEvents.object(at: UInt(indexPath.row)).name
+        
+        return cell
+    }
+
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
