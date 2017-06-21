@@ -12,6 +12,8 @@ import FBSDKCoreKit
 
 class InviteFriendsTableViewController: UITableViewController {
 
+    var key : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class AddSuppliesTableViewController: UITableViewController {
     
-    var key : String?
+    var key : String!
     var reference : DatabaseReference = Database.database().reference().child("Events")
     var supplies : [String] = []
 
