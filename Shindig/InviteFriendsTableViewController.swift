@@ -15,10 +15,7 @@ import FacebookLogin
 
 class InviteFriendsTableViewController: UITableViewController {
 
-
-    var key : String?
     var userData: [String:Any] = [:]
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

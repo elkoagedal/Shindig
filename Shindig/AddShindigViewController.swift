@@ -21,7 +21,11 @@ class AddShindigViewController: UIViewController {
     var numSupplies = 0
     
     var key : String?
+
     
+    @IBOutlet weak var numPeopleTextField: UITextField!
+    @IBOutlet weak var priceRangeTextField: UITextField!
+    @IBOutlet weak var supplyNameTextField: UITextField!
     @IBOutlet weak var shindigNameTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -30,9 +34,31 @@ class AddShindigViewController: UIViewController {
     @IBOutlet weak var shindigDetailsTextView: UITextView!
     
     
-    @IBAction func nextButton(_ sender: Any) {
+    @IBAction func addSupply(_ sender: Any) {
         ref = Database.database().reference()
-        key = ref?.childByAutoId().key
+        if (key == nil) {
+            key = self.ref?.childByAutoId().key
+        }
+        
+        numSupplies = numSupplies + 1
+        
+        ref?.child("Events").child(key!).child("supplies").child(supplyNameTextField.text!).child("supply price").setValue(priceRangeTextField.text)
+        ref?.child("Events").child(key!).child("supplies").child(supplyNameTextField.text!).child("num people").setValue(numPeopleTextField.text)
+        
+        priceRangeTextField.text = ""
+        supplyNameTextField.text = ""
+        numPeopleTextField.text = ""
+    }
+    
+    
+    
+    @IBAction func doneButton(_ sender: Any) {
+        ref = Database.database().reference()
+        print("here")
+        print(ref)
+        if (key == nil) {
+            key = self.ref?.childByAutoId().key
+        }
         ref?.child("Events").child(key!).child("date").setValue(dateTextField.text)
         ref?.child("Events").child(key!).child("location").setValue(locationTextField.text)
         ref?.child("Events").child(key!).child("time").setValue(timeTextField.text)
@@ -53,9 +79,9 @@ class AddShindigViewController: UIViewController {
         } catch {
             print("Error")
         }
+        print("realm")
         
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,11 +111,6 @@ class AddShindigViewController: UIViewController {
         if (segue.identifier == "goToSupplyList") {
             let add = segue.destination as! AddSuppliesTableViewController
             add.key = key
-        }
-        
-        if (segue.identifier == "navToAddSupply") {
-            let newSupply = segue.destination as! AddSupplyViewController
-            newSupply.key = key
         }
     }
     
