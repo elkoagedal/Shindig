@@ -22,6 +22,8 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var YourShindigsLabel: UILabel!
     @IBOutlet weak var AttendingShindigsLabel: UILabel!
     
+    var userData: [String:Any] = [:]
+    var picture: [URL] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,12 +85,22 @@ class ProfileTableViewController: UITableViewController {
                 //value(forKey: "picture") as! NSDictionary
                 {
                     
+                    let data = self.userData["data"] as! NSArray
+                    print(data)
+                    var d = data[0] as! NSDictionary
+                    print(d)
+                    for (key, value) in d {
+                        if (key as! String == "picture") {
+                            self.picture.append(value as! URL)
+                        }
+                    }
+/*
+                    if let data = profilePictureObj["data"] as? NSDictionary {
 
-                    let data = profilePictureObj["data"] as! NSDictionary
-
-                    let pictureUrlString  = data["url"] as! String
-                    let pictureUrl = NSURL(string: pictureUrlString)
-                    
+                    let pictureUrlString  = data["url"] as? String
+                    let pictureUrl = NSURL(string: pictureUrlString!)
+                    }
+ */
                     /*
                     let data = picture["data"] as? [String: Any]
                     let picture = jsondata["picture"] as? [String: Any]
@@ -96,8 +108,10 @@ class ProfileTableViewController: UITableViewController {
                      */
                     
              //      DispatchQueue.global(DispatchQueue.GlobalQueuePriority.default, 0).async() {
+                 
+                    /*
                     
-                        let imageData = NSData(contentsOf: pictureUrl! as URL)
+                    if let imageData = NSData(contentsOf: picture as URL) {
                         
                         DispatchQueue.main.async() {
                             if let imageData = imageData
@@ -106,9 +120,11 @@ class ProfileTableViewController: UITableViewController {
 
                                 self.profileImage.image = profileImageView
                                 self.profileImage.contentMode = UIViewContentMode.scaleAspectFit
+                            }
 
                             }
                         }
+                    */
                     }
                 }
             }
