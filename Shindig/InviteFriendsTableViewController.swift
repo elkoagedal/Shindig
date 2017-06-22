@@ -13,6 +13,8 @@ import UIKit
 import FBSDKCoreKit
 import FacebookCore
 import FacebookLogin
+import Firebase
+import FirebaseDatabase
 
 
 class InviteFriendsTableViewController: UITableViewController {
@@ -21,6 +23,7 @@ class InviteFriendsTableViewController: UITableViewController {
     var key : String?
     var userData: [String:Any] = [:]
     var friends : [String] = []
+    var ids : [String] = []
     //var data: NSDictionary = []
     
     
@@ -42,6 +45,9 @@ class InviteFriendsTableViewController: UITableViewController {
                     for (key, value) in d {
                         if (key as! String == "name") {
                             self.friends.append(value as! String)
+                        }
+                        if (key as! String == "id") {
+                            self.ids.append(value as! String)
                         }
                     }
                     self.tableView.reloadData()
@@ -87,6 +93,14 @@ class InviteFriendsTableViewController: UITableViewController {
         cell.textLabel?.text = friends[indexPath.row]
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        var id = ids[indexPath.row]
+        var ref = Database.database().reference().child("Users").child(id).child("attending").child(key!).setValue("invited")
+        
+        
     }
     
     

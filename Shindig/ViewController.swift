@@ -9,12 +9,19 @@
 import UIKit
 import FacebookLogin
 import FacebookCore
+import FBSDKCoreKit
+import Firebase
+import FirebaseDatabase
 //import FirebaseAuth
 
 class ViewController: UIViewController, LoginButtonDelegate {
+    
+    var userData: [String:Any] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //let params = ["fields": "id, first_name, last_name, name, email, picture"]
         
        // let accessToken = AccessToken.current
 
@@ -22,6 +29,48 @@ class ViewController: UIViewController, LoginButtonDelegate {
         loginButton.delegate = self
         loginButton.center = view.center
         view.addSubview(loginButton)
+        
+        /*
+        let graphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: params)
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(graphRequest, completionHandler: { (connection, result, error) in
+            if error == nil {
+                if let userData = result as? [String:Any] {
+                    //print(userData)
+                    let data = userData["data"] as! NSArray
+                    var d = data[0] as! NSDictionary
+                    print(d)
+                    for (key, value) in d {
+                        if (key as! String == "id") {
+                            UserDefaults.standard.set(value, forKey: "Username")
+                        }
+                    }
+                } else {
+                    print("Error Getting Data \(error)");
+                }
+                
+            }
+        })
+        connection.start()
+        */
+        /*if let accessToken = AccessToken.current {
+            // grabbing access token
+            let credential = FacebookAuthProvider.credential(withAccessToken: (AccessToken.current?.authenticationToken)!)
+            
+            Auth.auth().signIn(with: credential) { (user, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                print(user?.displayName)
+                
+            }
+        }
+        */
+        let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
+        self.present(ViewController!, animated: true, completion: nil)
+        
+
         
                 // Code from facebook
         /*
@@ -57,6 +106,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
     
     
     override func viewDidAppear(_ animated: Bool) {
+       
         let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
         self.present(ViewController!, animated: true, completion: nil)
 
@@ -72,6 +122,39 @@ class ViewController: UIViewController, LoginButtonDelegate {
     
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        
+        let params = ["fields": "id, first_name, last_name, name, email, picture"]
+        
+        let graphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: params)
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(graphRequest, completionHandler: { (connection, result, error) in
+            if error == nil {
+                if let userData = result as? [String:Any] {
+                    print(userData)
+                    //let data = userData["data"] as! NSArray
+                    var d = userData as! NSDictionary
+                    print(d)
+                    for (key, value) in d {
+                        if (key as! String == "id") {
+                            UserDefaults.standard.set(value, forKey: "Username")
+                            print(UserDefaults.standard.value(forKey: "Username"))
+                        }
+                    }
+                } else {
+                    print("Error Getting Data \(error)");
+                }
+                
+            }
+        })
+        connection.start()
+
+        let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
+        self.present(ViewController!, animated: true, completion: nil)
+
+        
+        
+        
+        
         // Successfully logged in --> what to do now
         /*
          let homeView = self.storyboard?.instantiateViewController(withIdentifier: "HomeView")
