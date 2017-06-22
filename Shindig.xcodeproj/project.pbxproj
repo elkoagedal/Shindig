@@ -17,6 +17,7 @@
 		9240D4AE1EF9746E00F54FC3 /* Shindig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9240D4AD1EF9746E00F54FC3 /* Shindig.swift */; };
 		9240D4B01EF9748F00F54FC3 /* ShindigRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9240D4AF1EF9748F00F54FC3 /* ShindigRealm.swift */; };
 		9240D4B61EFAF82200F54FC3 /* AddSupplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9240D4B51EFAF82200F54FC3 /* AddSupplyViewController.swift */; };
+		927862AE1EFBC933005A7E3D /* ShindigAttendingRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927862AD1EFBC933005A7E3D /* ShindigAttendingRealm.swift */; };
 		A10A442A1EF944DD00DBA48B /* PlanningShindigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A44291EF944DD00DBA48B /* PlanningShindigTableViewController.swift */; };
 		A10A442C1EF944F800DBA48B /* AttendingShindigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A442B1EF944F800DBA48B /* AttendingShindigTableViewController.swift */; };
 		A10A44341EF945BC00DBA48B /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A44331EF945BC00DBA48B /* ProfileTableViewController.swift */; };
@@ -43,6 +44,7 @@
 		9240D4AD1EF9746E00F54FC3 /* Shindig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shindig.swift; sourceTree = "<group>"; };
 		9240D4AF1EF9748F00F54FC3 /* ShindigRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShindigRealm.swift; sourceTree = "<group>"; };
 		9240D4B51EFAF82200F54FC3 /* AddSupplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSupplyViewController.swift; sourceTree = "<group>"; };
+		927862AD1EFBC933005A7E3D /* ShindigAttendingRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShindigAttendingRealm.swift; sourceTree = "<group>"; };
 		A10A44291EF944DD00DBA48B /* PlanningShindigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningShindigTableViewController.swift; sourceTree = "<group>"; };
 		A10A442B1EF944F800DBA48B /* AttendingShindigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendingShindigTableViewController.swift; sourceTree = "<group>"; };
 		A10A44331EF945BC00DBA48B /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				9240D4731EF9225200F54FC3 /* AppDelegate.swift */,
 				9240D4AD1EF9746E00F54FC3 /* Shindig.swift */,
 				9240D4AF1EF9748F00F54FC3 /* ShindigRealm.swift */,
+				927862AD1EFBC933005A7E3D /* ShindigAttendingRealm.swift */,
 				9240D4771EF9225300F54FC3 /* Main.storyboard */,
 				A10A44471EF9507000DBA48B /* Profile */,
 				A10A44461EF9505B00DBA48B /* Add Shindig */,
@@ -312,6 +315,7 @@
 				A11D9E371EFAC56D005E224B /* EditYourShindigViewController.swift in Sources */,
 				A11D9E351EFA7BB8005E224B /* AddShindigViewController.swift in Sources */,
 				A10A443C1EF9479900DBA48B /* IPSuppliesTableViewController.swift in Sources */,
+				927862AE1EFBC933005A7E3D /* ShindigAttendingRealm.swift in Sources */,
 				A10A443E1EF9482000DBA48B /* InviteFriendsTableViewController.swift in Sources */,
 				A10A44401EF9488E00DBA48B /* AddSuppliesTableViewController.swift in Sources */,
 				9240D4AE1EF9746E00F54FC3 /* Shindig.swift in Sources */,
