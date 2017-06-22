@@ -126,8 +126,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSF-ro-845" customClass="CircleAnimatedMenu" customModule="CircleAnimatedMenu">
-                                <rect key="frame" x="37" y="72" width="300" height="300"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSF-ro-845" customClass="CircleAnimatedMenu" customModule="CircleAnimatedMenu">
+                                <rect key="frame" x="37" y="72" width="300" height="349"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="eNg-kj-ceb">
                                         <rect key="frame" x="100" y="100" width="75" height="75"/>
@@ -199,7 +199,7 @@
                     <navigationItem key="navigationItem" title="Edit Your Shindig" id="iGg-fN-858">
                         <barButtonItem key="leftBarButtonItem" title="Save" id="3Em-FI-bZ7">
                             <connections>
-                                <action selector="backButton:" destination="08n-ce-d4i" id="nnW-dO-tkH"/>
+                                <action selector="backButton:" destination="08n-ce-d4i" id="TRl-dW-hgV"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Supplies" id="62N-7o-y2U">
@@ -209,13 +209,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="dateTextField" destination="eGq-Vz-75C" id="la6-HP-r92"/>
-                        <outlet property="descriptionTextField" destination="9zz-5T-Ijb" id="Bup-lu-ZmN"/>
-                        <outlet property="image" destination="eNg-kj-ceb" id="asl-tC-qqm"/>
-                        <outlet property="locationTextField" destination="cQH-op-u36" id="a5j-ly-APr"/>
-                        <outlet property="priceTextField" destination="gMQ-Qg-Q1R" id="nqD-pP-dGL"/>
-                        <outlet property="testMenu" destination="aSF-ro-845" id="4uQ-wu-LTm"/>
-                        <outlet property="timeTextField" destination="Rgg-yT-Ybx" id="xof-Vb-4uW"/>
+                        <outlet property="dateTextField" destination="eGq-Vz-75C" id="rn7-uA-J4M"/>
+                        <outlet property="descriptionTextField" destination="9zz-5T-Ijb" id="dbS-VY-75Z"/>
+                        <outlet property="locationTextField" destination="cQH-op-u36" id="nyQ-BF-KXc"/>
+                        <outlet property="priceTextField" destination="gMQ-Qg-Q1R" id="fTF-Ub-yiw"/>
+                        <outlet property="timeTextField" destination="Rgg-yT-Ybx" id="CIe-ib-mTf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hp-ng-THY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1304,7 +1302,7 @@
                     <navigationItem key="navigationItem" title="Your Shindig" id="GNT-JZ-oIO">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="qUd-kd-pd0">
                             <connections>
-                                <segue destination="08n-ce-d4i" kind="show" identifier="editDetails" id="AEe-b5-PaA"/>
+                                <segue destination="08n-ce-d4i" kind="show" identifier="editDetails" id="1v8-yI-Zt3"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Supplies" id="47R-Ab-4By"/>
