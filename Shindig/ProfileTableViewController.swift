@@ -9,7 +9,10 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-
+import FacebookLogin
+import FacebookCore
+import Alamofire
+import AlamofireImage
 
 class ProfileTableViewController: UITableViewController {
 
@@ -22,10 +25,26 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var YourShindigsLabel: UILabel!
     @IBOutlet weak var AttendingShindigsLabel: UILabel!
     
+    var userData: [String:Any] = [:]
+    var picture: [URL] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        if (AccessToken.current?.authenticationToken != nil) {
+            let user = Auth.auth().currentUser
+            
+            //deserialising grabbed image
+            Alamofire.request((user?.photoURL)!).responseImage { response in
+                if let image = response.result.value {
+                    self.profileImage.image = image
+                }
+            }
+        }
+    }
+        
+        
         /*
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture, email"]).start(completionHandler: { (connection, result, error) -> Void in
@@ -36,14 +55,6 @@ class ProfileTableViewController: UITableViewController {
                 }
             })
         }*/
-        
-        if let _ = FBSDKAccessToken.current()
-        {
-            fetchUserProfile()
-        }
-        
-        
-        }
         
     
         // Uncomment the following line to preserve selection between presentations
@@ -65,57 +76,6 @@ class ProfileTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    func fetchUserProfile() {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480)"])
-        graphRequest.start(completionHandler: {(connection, Result, Error) -> Void in
-            
-            if ((Error) != nil) {
-                print("Error")
-            }else {
-                print("Fetched Result: \(String(describing: Result))")
-            
-           //     if let id = Result as? [String: Any]
-                
-             //   print("User ID is: \(id)")
-                
-                
-                if let profilePictureObj = Result as? [String: Any]
-                //value(forKey: "picture") as! NSDictionary
-                {
-                    
-
-                    let data = profilePictureObj["data"] as! NSDictionary
-
-                    let pictureUrlString  = data["url"] as! String
-                    let pictureUrl = NSURL(string: pictureUrlString)
-                    
-                    /*
-                    let data = picture["data"] as? [String: Any]
-                    let picture = jsondata["picture"] as? [String: Any]
-                    let pitctureUrl = data["url"] as? String
-                     */
-                    
-             //      DispatchQueue.global(DispatchQueue.GlobalQueuePriority.default, 0).async() {
-                    
-                        let imageData = NSData(contentsOf: pictureUrl! as URL)
-                        
-                        DispatchQueue.main.async() {
-                            if let imageData = imageData
-                            {
-                                let profileImageView = UIImage(data: imageData as Data)
-
-                                self.profileImage.image = profileImageView
-                                self.profileImage.contentMode = UIViewContentMode.scaleAspectFit
-
-                            }
-                        }
-                    }
-                }
-            }
-    )}
-
-
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 3
