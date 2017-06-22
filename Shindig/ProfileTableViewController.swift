@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+
 class ProfileTableViewController: UITableViewController {
 
     @IBOutlet weak var userFullName: UILabel!
@@ -20,17 +21,38 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var YourShindigsLabel: UILabel!
     @IBOutlet weak var AttendingShindigsLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        /*
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    self.dict = result as! NSDictionary
+                    print(self.dict)
+                //    NSLog(self.dict.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as String)
+                }
+            })
+        }*/
+        
+        if let _ = FBSDKAccessToken.current()
+        {
+            fetchUserProfile()
+        }
+        
+        
+        }
+        
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        
-        }
+    
+    
 
   
         
@@ -42,6 +64,51 @@ class ProfileTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    func fetchUserProfile() {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480)"])
+        graphRequest.start(completionHandler: {(connection, Result, Error) -> Void in
+            
+            if ((Error) != nil) {
+                print("Error")
+            }else {
+                print("Fetched Result: \(String(describing: Result))")
+            
+           //     if let id = Result as? [String: Any]
+                
+             //   print("User ID is: \(id)")
+                
+                
+                if let profilePictureObj = Result as? [String: Any]
+                //value(forKey: "picture") as! NSDictionary
+                {
+                    
+                    let data = profilePictureObj["data"] as! NSDictionary
+                    let pictureUrlString  = data["url"] as! String
+                    let pictureUrl = NSURL(string: pictureUrlString)
+                    
+                    /*
+                    let data = picture["data"] as? [String: Any]
+                    let picture = jsondata["picture"] as? [String: Any]
+                    let pitctureUrl = data["url"] as? String
+                     */
+                    
+             //      DispatchQueue.global(DispatchQueue.GlobalQueuePriority.default, 0).async() {
+                    
+                        let imageData = NSData(contentsOf: pictureUrl! as URL)
+                        
+                        DispatchQueue.main.async() {
+                            if let imageData = imageData
+                            {
+                                let profileImageView = UIImage(data: imageData as Data)
+                                self.profileImageView.image = profileImageView
+                                self.profileImageView.contentMode = UIViewContentMode.scaleAspectFit
+                            }
+                        }
+                    }
+                }
+            }
+    )}
+
 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -127,5 +194,5 @@ class ProfileTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
