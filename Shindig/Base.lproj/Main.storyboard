@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tIe-gy-9WE">
+
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9zN-fU-btc">
+
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -582,7 +584,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="inviteFriendscell" selectionStyle="default" indentationWidth="10" textLabel="3aj-Qu-nRE" detailTextLabel="HnZ-4G-zUw" imageView="xVt-Zn-RA2" style="IBUITableViewCellStyleSubtitle" id="lN4-R5-s1d">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="inviteFriendsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="inviteFriendsCell" textLabel="3aj-Qu-nRE" imageView="xVt-Zn-RA2" style="IBUITableViewCellStyleDefault" id="lN4-R5-s1d">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lN4-R5-s1d" id="ufq-PW-Bh0">
@@ -590,16 +592,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3aj-Qu-nRE">
-                                            <rect key="frame" x="62" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="62" y="0.0" width="298" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HnZ-4G-zUw">
-                                            <rect key="frame" x="62" y="25.5" width="33" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -950,19 +945,36 @@
                         <outlet property="CollegeLabel" destination="Ndf-hR-MQf" id="nQb-sF-NP0"/>
                         <outlet property="EmailLabel" destination="P3M-hd-Rn9" id="8Be-Zn-yCf"/>
                         <outlet property="YourShindigsLabel" destination="d7q-5V-gGs" id="5ut-Px-jZ0"/>
-                        <outlet property="profileImage" destination="hYL-qm-Oc3" id="8Dg-sf-7LK"/>
+                        <outlet property="profileImage" destination="hYL-qm-Oc3" id="suA-q5-4M7"/>
                         <outlet property="userFullName" destination="8Dh-Fg-iTa" id="0c3-Mz-cws"/>
-                        <outlet property="userProfileImage" destination="hYL-qm-Oc3" id="TlO-fr-CYK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVX-qs-Wlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2836" y="615"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="MEU-C9-ddC">
+            <objects>
+                <viewController id="9zN-fU-btc" customClass="ViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AZ7-b8-BCr"/>
+                        <viewControllerLayoutGuide type="bottom" id="IxY-y0-AD3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jDw-S5-3yb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O22-bB-xHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103" y="121"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nVB-ub-47I">
             <objects>
-                <tabBarController id="tIe-gy-9WE" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainView" id="tIe-gy-9WE" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="c8V-92-OD3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
