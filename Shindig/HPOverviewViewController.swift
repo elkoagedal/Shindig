@@ -39,7 +39,7 @@ class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
         testMenu.menuWidthLine = 1
         testMenu.titleFont = UIFont.systemFont(ofSize: 14)
         testMenu.delegate = self
-        testMenu.highlightedColors = [.red, .orange, .yellow, .green, .blue, .cyan, .purple]
+        testMenu.highlightedColors = [.blue, .orange, .yellow, .green, .blue, .cyan, .purple]
         testMenu.tuplesArray = [("http://www.freeiconspng.com/uploads/profile-icon-9.png", "Emily"), ("instagram-1", "Instagram"), ("Twitter", "Twitter"),
                                 ("LinkedIn", "LinkedIn"), ("Google Plus +", "GooglePlus"), ("Pinterest", "Pinterest"),
                                 ("RSS", "RSS"), ("YouTube", "YouTube"), ("Bloglovin", "Bloglovin"),
@@ -98,7 +98,8 @@ class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        image.layer.zPosition = 999
+       // image.layer.zPosition = 1001
+        image.layer.zPosition = 1
     }
     
     func sectionSelected(text: String, index: Int) {
