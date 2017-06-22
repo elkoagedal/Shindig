@@ -24,6 +24,9 @@ class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var totalPoolLabel: UILabel!
     
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -127,6 +130,11 @@ class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
         if (segue.identifier == "editDetails") {
             let edit = segue.destination as! EditYourShindigViewController
             edit.key = key
+        }
+        
+        if (segue.identifier == "navToSupplies") {
+            let sup = segue.destination as! HPSuppliesTableViewController
+            sup.key = key
         }
     }
     

@@ -14,7 +14,8 @@ import FBSDKLoginKit
 class ProfileTableViewController: UITableViewController {
 
     @IBOutlet weak var userFullName: UILabel!
-    @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var BirthdayLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var CollegeLabel: UILabel!
@@ -82,7 +83,9 @@ class ProfileTableViewController: UITableViewController {
                 //value(forKey: "picture") as! NSDictionary
                 {
                     
+
                     let data = profilePictureObj["data"] as! NSDictionary
+
                     let pictureUrlString  = data["url"] as! String
                     let pictureUrl = NSURL(string: pictureUrlString)
                     
@@ -100,8 +103,10 @@ class ProfileTableViewController: UITableViewController {
                             if let imageData = imageData
                             {
                                 let profileImageView = UIImage(data: imageData as Data)
-                                self.profileImageView.image = profileImageView
-                                self.profileImageView.contentMode = UIViewContentMode.scaleAspectFit
+
+                                self.profileImage.image = profileImageView
+                                self.profileImage.contentMode = UIViewContentMode.scaleAspectFit
+
                             }
                         }
                     }
