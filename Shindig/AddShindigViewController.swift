@@ -41,6 +41,7 @@ class AddShindigViewController: UIViewController {
         ref?.child("Events").child(key!).child("price").setValue(priceTextField.text)
         ref?.child("Events").child(key!).child("details").setValue(shindigDetailsTextView.text)
         ref?.child("Events").child(key!).child("name").setValue(shindigNameTextField.text)
+        ref?.child("Users").child(UserDefaults.standard.string(forKey: "Username")!).child("hosting").setValue(key!)
         
         let event = ShindigRealm()
         event.key = key

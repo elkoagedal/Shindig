@@ -9,7 +9,8 @@
 import UIKit
 import Realm
 import RealmSwift
-
+import Firebase
+import FirebaseDatabase
 /*
 class AttendCustomCell: UITableViewCell {
     @IBOutlet weak var ShindigName: UILabel!
@@ -22,7 +23,7 @@ class AttendCustomCell: UITableViewCell {
 
 class AttendingShindigTableViewController: UITableViewController {
     
-    
+    /*
     var event : ShindigAttendingRealm?
     
     var myAttendingEvents : RLMResults<ShindigAttendingRealm> {
@@ -30,7 +31,8 @@ class AttendingShindigTableViewController: UITableViewController {
             return ShindigAttendingRealm.allObjects() as! RLMResults<ShindigAttendingRealm>
         }
     }
-
+    */
+    var shindigs : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,13 +58,66 @@ class AttendingShindigTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Int(myAttendingEvents.count)
+        var numInvited = 0
+        
+        var ref = Database.database().reference().child("Users").child(UserDefaults.standard.string(forKey: "Username")!).child("attending")
+        var dat = ref.observe(.value, with: { (snapshot) in
+            
+            if !snapshot.exists() {
+                let alertController = UIAlertController(title: "Not Attending Any Shindigs", message: " ", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
+                
+            else {
+                let dictionary = snapshot.value as! NSDictionary
+                for (key, value) in dictionary {
+                    numInvited = numInvited + 1
+                    self.shindigs.append(key as! String)
+                    print(key)
+                    self.tableView.reloadData()
+                    
+                }
+            }
+            
+        })
+        
+        return numInvited
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myAttendingEvents", for: indexPath)
         
-        cell.textLabel?.text = myAttendingEvents.object(at: UInt(indexPath.row)).name
+        var k = shindigs[indexPath.row]
+        var d = Database.database().reference().child("Events").child(k)
+        
+        var d2 = d.observe(.value, with: { (snapshot) in
+            
+            // If no supplies exist, display alert
+            if !snapshot.exists() {
+                let alertController = UIAlertController(title: "Not Attending Any Shindigs", message: " ", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
+                
+                
+                // Put supplies in the supplies array
+            else {
+                let dict1 = snapshot.value as! NSDictionary
+                
+                for (key, value) in dict1 {
+                    if (key as! String == "name") {
+                        cell.textLabel?.text = value as! String
+                    }
+                    if (key as! String == "date") {
+                        cell.detailTextLabel?.text = value as! String
+                    }
+                    
+                }
+            }
+            
+        })
+
         
         return cell
     }
@@ -124,7 +179,7 @@ class AttendingShindigTableViewController: UITableViewController {
             let details = segue.destination as! UINavigationController
             let details2 = details.topViewController as! HPOverviewViewController
             
-            details2.key = myAttendingEvents.object(at: UInt((indexPath?.row)!)).key
+            details2.key = shindigs[(indexPath?.row)!]
         }
     }
 
