@@ -45,7 +45,6 @@ class AddShindigViewController: UIViewController {
         let event = ShindigRealm()
         event.key = key
         event.name = shindigNameTextField.text
-        print(event.name)
         
         let realm = RLMRealm.default()
         realm.beginWriteTransaction()

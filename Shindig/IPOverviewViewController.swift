@@ -11,6 +11,7 @@ import CircleAnimatedMenu
 
 class IPOverviewViewController: UIViewController {
     @IBOutlet weak var testMenu: CircleAnimatedMenu!
+    var key : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()

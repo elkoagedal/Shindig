@@ -23,6 +23,7 @@ class AddSupplyViewController: UIViewController {
         
         ref.child("Events").child(key!).child("supplies").child(nameTextField.text!).child("supply price").setValue(priceTextField.text)
         ref.child("Events").child(key!).child("supplies").child(nameTextField.text!).child("num people").setValue(numPeopleTextField.text)
+        ref.child("Events").child(key!).child("supplies").child(nameTextField.text!).child("taken").setValue("false")
         
         priceTextField.text = ""
         nameTextField.text = ""
