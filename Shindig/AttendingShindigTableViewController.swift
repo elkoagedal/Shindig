@@ -103,6 +103,15 @@ class AttendingShindigTableViewController: UITableViewController {
             
             details2.key = shindigs[(indexPath?.row)!]
         }
+        
+        if (segue.identifier == "acceptInvitation") {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)
+            
+            let details = segue.destination as! AcceptInvitationViewController
+            
+            details.key = shindigs[(indexPath?.row)!]
+        }
     }
 
 }

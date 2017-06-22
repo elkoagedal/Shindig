@@ -32,7 +32,7 @@ class ProfileTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        if (AccessToken.current?.authenticationToken != nil) {
+        /*if (AccessToken.current?.authenticationToken != nil) {
             let user = Auth.auth().currentUser
             
             //deserialising grabbed image
@@ -42,6 +42,7 @@ class ProfileTableViewController: UITableViewController {
                 }
             }
         }
+ */
     }
         
         
