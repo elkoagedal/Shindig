@@ -95,6 +95,8 @@ class HPSuppliesTableViewController: UITableViewController {
             
             cell.textLabel?.text = suppliesOpen[indexPath.row]
             
+            cell.accessoryType = .none
+            
             return cell
         }
         
@@ -103,6 +105,8 @@ class HPSuppliesTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "supply2", for: indexPath)
         
             cell.textLabel?.text = suppliesTaken[indexPath.row]
+            
+            cell.accessoryType = .checkmark
         
             return cell
         }

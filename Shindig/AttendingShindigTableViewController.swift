@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 /*
 class AttendCustomCell: UITableViewCell {
@@ -19,6 +21,16 @@ class AttendCustomCell: UITableViewCell {
  */
 
 class AttendingShindigTableViewController: UITableViewController {
+    
+    
+    var event : ShindigAttendingRealm?
+    
+    var myAttendingEvents : RLMResults<ShindigAttendingRealm> {
+        get {
+            return ShindigAttendingRealm.allObjects() as! RLMResults<ShindigAttendingRealm>
+        }
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +56,18 @@ class AttendingShindigTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return Int(myAttendingEvents.count)
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myAttendingEvents", for: indexPath)
+        
+        cell.textLabel?.text = myAttendingEvents.object(at: UInt(indexPath.row)).name
+        
+        return cell
+    }
+    
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -92,14 +113,19 @@ class AttendingShindigTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "attendingEventDetails") {
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)
+            
+            let details = segue.destination as! UINavigationController
+            let details2 = details.topViewController as! HPOverviewViewController
+            
+            details2.key = myAttendingEvents.object(at: UInt((indexPath?.row)!)).key
+        }
     }
-    */
 
 }
