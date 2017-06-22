@@ -128,6 +128,11 @@ class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
             let edit = segue.destination as! EditYourShindigViewController
             edit.key = key
         }
+        
+        if (segue.identifier == "navToSupplies") {
+            let sup = segue.destination as! HPSuppliesTableViewController
+            sup.key = key
+        }
     }
     
 

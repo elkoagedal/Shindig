@@ -83,7 +83,9 @@ class ProfileTableViewController: UITableViewController {
                 //value(forKey: "picture") as! NSDictionary
                 {
                     
-                     let data = profilePictureObj["data"] as! NSDictionary 
+
+                    let data = profilePictureObj["data"] as! NSDictionary
+
                     let pictureUrlString  = data["url"] as! String
                     let pictureUrl = NSURL(string: pictureUrlString)
                     
@@ -101,8 +103,10 @@ class ProfileTableViewController: UITableViewController {
                             if let imageData = imageData
                             {
                                 let profileImageView = UIImage(data: imageData as Data)
+
                                 self.profileImage.image = profileImageView
                                 self.profileImage.contentMode = UIViewContentMode.scaleAspectFit
+
                             }
                         }
                     }
