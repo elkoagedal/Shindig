@@ -246,6 +246,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="D0a-2b-D28" kind="show" identifier="supplyDetail" id="D6s-iQ-lij"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="supply2" editingAccessoryType="checkmark" textLabel="SOK-Ih-CGA" rowHeight="65" style="IBUITableViewCellStyleDefault" id="ReL-i9-8DZ" customClass="AvailableSupply">
                                 <rect key="frame" x="0.0" y="94" width="375" height="65"/>
@@ -279,6 +282,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSz-ob-AcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5939" y="-802"/>
+        </scene>
+        <!--Sign Up For A Supply-->
+        <scene sceneID="21D-4p-eO4">
+            <objects>
+                <viewController id="D0a-2b-D28" customClass="SignUpForSupplyViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U5r-XR-rV3"/>
+                        <viewControllerLayoutGuide type="bottom" id="u2Z-A3-ARp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g8n-XN-5Wc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmU-4m-JLg">
+                                <rect key="frame" x="152" y="330" width="70" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up!"/>
+                                <connections>
+                                    <action selector="signUpButton:" destination="D0a-2b-D28" eventType="touchUpInside" id="6PD-ZD-60V"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtz-Xg-p1O">
+                                <rect key="frame" x="28" y="109" width="331" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ac-Ov-hIz">
+                                <rect key="frame" x="28" y="175" width="331" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGm-Jz-8pa">
+                                <rect key="frame" x="28" y="242" width="331" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnc-Rh-NwV">
+                                <rect key="frame" x="152" y="384" width="70" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="D0a-2b-D28" eventType="touchUpInside" id="GEe-E3-kGi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign Up For A Supply" id="87D-nN-G6t"/>
+                    <connections>
+                        <outlet property="eventNameLabel" destination="dtz-Xg-p1O" id="14z-G8-Qxf"/>
+                        <outlet property="priceLabel" destination="VGm-Jz-8pa" id="gjS-ME-zsT"/>
+                        <outlet property="supplyNameLabel" destination="9ac-Ov-hIz" id="DOE-jY-tKG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJO-qH-Azp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6948" y="-342.27886056971516"/>
         </scene>
         <!--Attending Events-->
         <scene sceneID="0QF-au-oDy">
@@ -425,6 +491,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="D0a-2b-D28" kind="show" identifier="supplyDetail" id="HWf-2w-niO"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" editingAccessoryType="checkmark" textLabel="5S9-QB-cQW" detailTextLabel="IUO-J7-os8" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="Vur-gM-vIN">
                                 <rect key="frame" x="0.0" y="94" width="375" height="65"/>
@@ -1373,6 +1442,7 @@
         <image name="wedding-planning" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="HWf-2w-niO"/>
         <segue reference="9Td-qV-z10"/>
     </inferredMetricsTieBreakers>
 </document>
