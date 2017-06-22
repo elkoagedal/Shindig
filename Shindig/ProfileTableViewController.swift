@@ -28,6 +28,18 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        let size = CGSize(width: 1080, height: 1080)
+        let path = FBSDKProfile.current().imagePath(for: .normal, size: size)
+        Alamofire.request("https://graph.facebook.com/\(path)", method: .get, parameters: nil, encoding: ParameterEncoding.URL).response {
+            (request, response, data, error) -> Void in
+            if  let imageData = data as? NSData,
+                let image = UIImage(data: imageData) {
+                self.profile.setImage(image, forState: .Normal)
+            }
+        }
+        
+        
         /*
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture, email"]).start(completionHandler: { (connection, result, error) -> Void in
