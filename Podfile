@@ -15,6 +15,7 @@ target 'Shindig' do
   pod 'RealmSwift'
 
   pod "CircleAnimatedMenu"
+  pod 'AlamofireImage', '~> 3.1'
 
 
   # Pods for Shindig
