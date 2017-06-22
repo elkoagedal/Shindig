@@ -9,18 +9,21 @@
 import UIKit
 import FacebookLogin
 import FacebookCore
+//import FirebaseAuth
 
 class ViewController: UIViewController, LoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // let accessToken = AccessToken.current
+
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .userFriends])
         loginButton.delegate = self
         loginButton.center = view.center
         view.addSubview(loginButton)
         
-        
-        // Code from facebook 
+                // Code from facebook
         /*
     - (void)viewDidLoad
     {
@@ -30,8 +33,37 @@ class ViewController: UIViewController, LoginButtonDelegate {
     }
          }
     */
- 
+        /*
+        let credential = FacebookAuthProvider.credential(withAccessToken: (AccessToken.current?.authenticationToken)!)
+        
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                // ...
+                return
+                
+            }
+            // User is signed in
+            // ...
+            
+            let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
+            self.present(ViewController!, animated: true, completion: nil)
+            
+        }
+        
+
+ */
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
+        self.present(ViewController!, animated: true, completion: nil)
+
+
+            }
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

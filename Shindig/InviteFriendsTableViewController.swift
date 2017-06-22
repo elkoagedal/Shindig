@@ -20,6 +20,8 @@ class InviteFriendsTableViewController: UITableViewController {
     
     var key : String?
     var userData: [String:Any] = [:]
+    var friends : [String] = []
+    //var data: NSDictionary = []
     
     
     override func viewDidLoad() {
@@ -32,7 +34,19 @@ class InviteFriendsTableViewController: UITableViewController {
         connection.add(graphRequest, completionHandler: { (connection, result, error) in
             if error == nil {
                 if let userData = result as? [String:Any] {
-                    print(userData)
+                    //print(userData)
+                    let data = userData["data"] as! NSArray
+                    print(data)
+                    var d = data[0] as! NSDictionary
+                    print(d)
+                    for (key, value) in d {
+                        if (key as! String == "name") {
+                            self.friends.append(value as! String)
+                        }
+                    }
+                    self.tableView.reloadData()
+                    
+                    print(data)
                 }
             } else {
                 print("Error Getting Friends \(error)");
@@ -57,20 +71,20 @@ class InviteFriendsTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return Int(userData.count)
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return friends.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "inviteFriendsCell", for: indexPath)
         
         // Configure the cell...
-        // cell.textLabel?.text =
+        cell.textLabel?.text = friends[indexPath.row]
         
         return cell
     }
