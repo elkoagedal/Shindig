@@ -15,7 +15,7 @@
         <!--Planning Events-->
         <scene sceneID="XIG-Jx-QMW">
             <objects>
-                <tableViewController id="413-ia-h78" customClass="PlanningShindigTableViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="view2" id="413-ia-h78" customClass="PlanningShindigTableViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Pb-z3-q2J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,7 +348,7 @@
         <!--Attending Events-->
         <scene sceneID="0QF-au-oDy">
             <objects>
-                <tableViewController id="vDX-EY-PFi" customClass="AttendingShindigTableViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="view1" id="vDX-EY-PFi" customClass="AttendingShindigTableViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="kgk-hc-hup">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -834,7 +834,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rf-Uh-6V6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rf-Uh-6V6">
                                                     <rect key="frame" x="17" y="11" width="341" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -856,7 +856,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3M-hd-Rn9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3M-hd-Rn9">
                                                     <rect key="frame" x="17" y="11" width="341" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -878,7 +878,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="College/University" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-hR-MQf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="College/University" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-hR-MQf">
                                                     <rect key="frame" x="17" y="11" width="341" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -900,19 +900,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Shindigs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7q-5V-gGs">
-                                                    <rect key="frame" x="17" y="11" width="341" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B42-QF-lpb">
+                                                    <rect key="frame" x="18" y="0.0" width="339" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Attending Shindigs">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="attendingButton:" destination="hHz-mD-JfS" eventType="touchUpInside" id="4Md-yX-M2d"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="d7q-5V-gGs" firstAttribute="top" secondItem="ZVu-lx-bbT" secondAttribute="topMargin" constant="3" id="2tF-Bx-OlT"/>
-                                                <constraint firstItem="d7q-5V-gGs" firstAttribute="leading" secondItem="ZVu-lx-bbT" secondAttribute="leadingMargin" constant="9" id="PtJ-iF-9cx"/>
-                                                <constraint firstItem="d7q-5V-gGs" firstAttribute="centerX" secondItem="ZVu-lx-bbT" secondAttribute="centerX" id="ham-VD-Ubb"/>
-                                                <constraint firstItem="d7q-5V-gGs" firstAttribute="centerY" secondItem="ZVu-lx-bbT" secondAttribute="centerY" id="wIg-Tm-Xjs"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="54" id="n9B-xw-WYD">
@@ -922,19 +921,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attending Shindigs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xi1-bc-AZP">
-                                                    <rect key="frame" x="17" y="11" width="341" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qw-Nv-5jO">
+                                                    <rect key="frame" x="20" y="0.0" width="337" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Your Shindigs">
+                                                        <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="yourShindigs:" destination="hHz-mD-JfS" eventType="touchUpInside" id="ERU-P5-PVl"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="xi1-bc-AZP" firstAttribute="top" secondItem="2ks-nc-RDg" secondAttribute="topMargin" constant="3" id="5Xw-Cj-8qx"/>
-                                                <constraint firstItem="xi1-bc-AZP" firstAttribute="leading" secondItem="2ks-nc-RDg" secondAttribute="leadingMargin" constant="9" id="65W-iK-NNN"/>
-                                                <constraint firstItem="xi1-bc-AZP" firstAttribute="centerX" secondItem="2ks-nc-RDg" secondAttribute="centerX" id="JfO-Ey-KDS"/>
-                                                <constraint firstItem="xi1-bc-AZP" firstAttribute="centerY" secondItem="2ks-nc-RDg" secondAttribute="centerY" id="LL9-a0-HNK"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -948,18 +946,16 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="user-2.png.300x200_q85_crop" selectedImage="user-2.png.300x200_q85_crop" id="lGT-ac-k3w"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="AttendingShindigsLabel" destination="xi1-bc-AZP" id="AAI-6e-kWS"/>
                         <outlet property="BirthdayLabel" destination="8rf-Uh-6V6" id="MJT-SJ-RtK"/>
                         <outlet property="CollegeLabel" destination="Ndf-hR-MQf" id="nQb-sF-NP0"/>
                         <outlet property="EmailLabel" destination="P3M-hd-Rn9" id="8Be-Zn-yCf"/>
-                        <outlet property="YourShindigsLabel" destination="d7q-5V-gGs" id="5ut-Px-jZ0"/>
                         <outlet property="profileImage" destination="hYL-qm-Oc3" id="suA-q5-4M7"/>
                         <outlet property="userFullName" destination="8Dh-Fg-iTa" id="0c3-Mz-cws"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVX-qs-Wlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836" y="615"/>
+            <point key="canvasLocation" x="2836" y="614.84257871064472"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MEU-C9-ddC">

@@ -22,14 +22,80 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var BirthdayLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var CollegeLabel: UILabel!
-    @IBOutlet weak var YourShindigsLabel: UILabel!
-    @IBOutlet weak var AttendingShindigsLabel: UILabel!
+    
+    @IBAction func yourShindigs(_ sender: Any) {
+        let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "view2")
+        self.present(ViewController!, animated: true, completion: nil)
+    }
+    
+    @IBAction func attendingButton(_ sender: Any) {
+        let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "view1")
+        self.present(ViewController!, animated: true, completion: nil)
+    }
+    
+    /*@IBAction func yourShindigsButton(_ sender: Any) {
+        let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "view2")
+        self.present(ViewController!, animated: true, completion: nil)
+    }
+ */
+    
     
     var userData: [String:Any] = [:]
     var picture: [URL] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let params = ["fields": "id, first_name, last_name, name, email, picture"]
+        
+        let graphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: params)
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(graphRequest, completionHandler: { (connection, result, error) in
+            if error == nil {
+                if let userData = result as? [String:Any] {
+                    print(userData)
+                    //let data = userData["data"] as! NSArray
+                    var d = userData as! NSDictionary
+                    for (key, value) in d {
+                        if (key as! String == "name") {
+                            self.userFullName.text = value as? String
+                        }
+                        if (key as! String == "email") {
+                            self.EmailLabel.text = value as? String
+                        }
+                        if (key as! String == "picture") {
+                            var data = value as! NSDictionary
+                            
+                            for (key, value) in data {
+                                if (key as! String == "data") {
+                                    var pict = value as! NSDictionary
+                                    for (key, value) in pict {
+                                        if (key as! String == "url") {
+                                            var picURL = value
+                                            print(picURL)
+                                        }
+                                    }
+                                
+                                }
+                            }
+                        }
+                        print(d)
+                    }
+                } else {
+                    print("Error Getting Data \(error)");
+                }
+                
+            }
+        })
+        connection.start()
+        
+
+        
+        
+        
+        
+        
+        
         
         
         /*if (AccessToken.current?.authenticationToken != nil) {
@@ -96,16 +162,7 @@ class ProfileTableViewController: UITableViewController {
         return 0
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // Some navigation Items
-        if indexPath.section == 2 && indexPath.row == 3 {
-            self.tabBarController?.selectedIndex = 1
-        }
-        if indexPath.section == 2 && indexPath.row == 4 {
-            self.tabBarController?.selectedIndex = 0
-        }
-    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
