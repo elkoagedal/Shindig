@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9zN-fU-btc">
-
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -51,7 +49,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ul9-Bu-bdC" kind="show" identifier="myEventDetails" id="m79-zo-4Gh"/>
+                                    <segue destination="ul9-Bu-bdC" kind="show" identifier="myEventDetails" id="gGS-Z2-wDd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -355,24 +353,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myAttendingEvents" textLabel="diD-iz-Gtb" detailTextLabel="ffN-qy-xgA" imageView="IXt-V3-x9T" rowHeight="63" style="IBUITableViewCellStyleSubtitle" id="gsc-R4-ErL">
                                 <rect key="frame" x="0.0" y="28" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gsc-R4-ErL" id="a8t-LQ-dIb" customClass="AttendCustomCell" customModule="Shindig" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="diD-iz-Gtb">
-                                            <rect key="frame" x="66" y="14" width="34" height="20"/>
+                                            <rect key="frame" x="66" y="14" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ffN-qy-xgA">
-                                            <rect key="frame" x="66" y="34" width="44" height="15"/>
+                                            <rect key="frame" x="66" y="34.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -385,12 +382,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YnH-Wi-onm" kind="show" id="Hsl-Xd-2iz"/>
+                                    <segue destination="72A-go-wbq" kind="show" identifier="acceptInvitation" id="XLe-6b-oBK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
-
                         <connections>
                             <outlet property="dataSource" destination="vDX-EY-PFi" id="8go-LX-BH3"/>
                             <outlet property="delegate" destination="vDX-EY-PFi" id="9VY-hI-doR"/>
@@ -412,7 +408,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" editingAccessoryType="checkmark" textLabel="AEI-RS-ZDW" detailTextLabel="JqN-5n-95N" rowHeight="66" style="IBUITableViewCellStyleSubtitle" id="qyM-9y-QwE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="supply1" editingAccessoryType="checkmark" textLabel="AEI-RS-ZDW" detailTextLabel="JqN-5n-95N" rowHeight="66" style="IBUITableViewCellStyleSubtitle" id="qyM-9y-QwE">
                                 <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qyM-9y-QwE" id="bJg-Lq-Ey6">
@@ -436,10 +432,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="D0a-2b-D28" kind="show" identifier="supplyDetail" id="HWf-2w-niO"/>
+                                    <segue destination="D0a-2b-D28" kind="show" identifier="abc" id="HWf-2w-niO"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" editingAccessoryType="checkmark" textLabel="5S9-QB-cQW" detailTextLabel="IUO-J7-os8" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="Vur-gM-vIN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="supply2" editingAccessoryType="checkmark" textLabel="5S9-QB-cQW" detailTextLabel="IUO-J7-os8" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="Vur-gM-vIN">
                                 <rect key="frame" x="0.0" y="94" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vur-gM-vIN" id="8l4-h2-8CJ">
@@ -1179,13 +1175,18 @@
                     <navigationItem key="navigationItem" title="Shindig" id="2nA-Jd-0rS">
                         <barButtonItem key="rightBarButtonItem" title="Supplies" id="VSM-oh-u3a">
                             <connections>
-                                <segue destination="Jbq-3M-flc" kind="show" id="hya-yO-J3L"/>
+                                <segue destination="Jbq-3M-flc" kind="show" identifier="deets" id="hya-yO-J3L"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dateTextField" destination="TuO-qq-Rm9" id="I21-2y-SxW"/>
+                        <outlet property="detailsTextField" destination="PDf-P2-ZsD" id="fze-bh-pgE"/>
+                        <outlet property="locationTextField" destination="H5o-or-xGa" id="O0g-u7-Sbb"/>
+                        <outlet property="priceTextField" destination="tmH-RS-y4P" id="DKh-fC-84p"/>
                         <outlet property="testMenu" destination="b5z-B0-cHN" id="FyZ-Mb-uSY"/>
+                        <outlet property="timeTextField" destination="JQ4-RC-Hhv" id="42V-OW-aph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REl-hB-Abs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1392,10 +1393,10 @@
             </objects>
             <point key="canvasLocation" x="5816.8000000000002" y="-1600.7496251874063"/>
         </scene>
-        <!--Accept Invitation View Controller-->
+        <!--acceptInvitation-->
         <scene sceneID="df1-dy-zgL">
             <objects>
-                <viewController id="72A-go-wbq" customClass="AcceptInvitationViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="acceptInvitation" id="72A-go-wbq" customClass="AcceptInvitationViewController" customModule="Shindig" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iAD-aH-C4q"/>
                         <viewControllerLayoutGuide type="bottom" id="eMB-G5-mVh"/>
@@ -1418,6 +1419,9 @@
                                 <state key="normal" title="No?">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="noButton:" destination="72A-go-wbq" eventType="touchUpInside" id="GIg-0b-tiB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5t-h5-mxD">
                                 <rect key="frame" x="75" y="439" width="93" height="63"/>
@@ -1426,6 +1430,10 @@
                                 <state key="normal" title="Yes?">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="acceptButton:" destination="72A-go-wbq" eventType="touchUpInside" id="4yN-Vg-wV9"/>
+                                    <segue destination="YnH-Wi-onm" kind="show" identifier="goToDetails" id="mLh-I9-x5Z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1462,7 +1470,7 @@
         <image name="wedding-planning" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Td-qV-z10"/>
         <segue reference="HWf-2w-niO"/>
+        <segue reference="9Td-qV-z10"/>
     </inferredMetricsTieBreakers>
 </document>
