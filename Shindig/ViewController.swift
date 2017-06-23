@@ -67,8 +67,8 @@ class ViewController: UIViewController, LoginButtonDelegate {
             }
         }
         */
-        let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
-        self.present(ViewController!, animated: true, completion: nil)
+        //let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
+        //self.present(ViewController!, animated: true, completion: nil)
         
 
         
@@ -138,6 +138,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
                         if (key as! String == "id") {
                             UserDefaults.standard.set(value, forKey: "Username")
                             print(UserDefaults.standard.value(forKey: "Username"))
+                            print("stored")
                         }
                     }
                 } else {
@@ -148,8 +149,8 @@ class ViewController: UIViewController, LoginButtonDelegate {
         })
         connection.start()
 
-        let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
-        self.present(ViewController!, animated: true, completion: nil)
+        //let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
+        //self.present(ViewController!, animated: true, completion: nil)
 
         
         

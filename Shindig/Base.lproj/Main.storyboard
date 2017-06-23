@@ -77,8 +77,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pool: $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrH-EZ-23P">
-                                <rect key="frame" x="137" y="579" width="95" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pool: $90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrH-EZ-23P">
+                                <rect key="frame" x="126.5" y="579" width="116" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="Koe-o9-jga"/>
                                 </constraints>
@@ -125,21 +125,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSF-ro-845" customClass="CircleAnimatedMenu" customModule="CircleAnimatedMenu">
-                                <rect key="frame" x="37" y="72" width="300" height="349"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="eNg-kj-ceb">
-                                        <rect key="frame" x="100" y="124" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="M9J-Vf-l6J"/>
-                                            <constraint firstAttribute="width" constant="100" id="enM-Th-aPJ"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="eNg-kj-ceb" firstAttribute="leading" secondItem="aSF-ro-845" secondAttribute="trailing" constant="-200" id="TPX-lc-yFG"/>
-                                    <constraint firstItem="eNg-kj-ceb" firstAttribute="top" secondItem="aSF-ro-845" secondAttribute="bottom" constant="-225" id="UVQ-Jv-j10"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSF-ro-845" customClass="CircleAnimatedMenu" customModule="CircleAnimatedMenu">
+                                <rect key="frame" x="40" y="64" width="300" height="311"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="innerCircleColor">
                                         <color key="value" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1048,19 +1035,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b5z-B0-cHN" customClass="CircleAnimatedMenu" customModule="CircleAnimatedMenu">
                                 <rect key="frame" x="37" y="78" width="300" height="294"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="rLC-iA-Qhf">
-                                        <rect key="frame" x="100" y="97" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="PG3-Ce-BX2"/>
-                                            <constraint firstAttribute="width" constant="100" id="gUW-Ux-aNz"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="rLC-iA-Qhf" firstAttribute="top" secondItem="b5z-B0-cHN" secondAttribute="top" constant="97" id="V0X-4U-vW3"/>
-                                    <constraint firstItem="rLC-iA-Qhf" firstAttribute="leading" secondItem="b5z-B0-cHN" secondAttribute="leading" constant="100" id="ken-9d-DIA"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="innerCircleColor">
                                         <color key="value" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1130,8 +1104,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pool: $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhZ-zd-lV6">
-                                <rect key="frame" x="137" y="576" width="95" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pool: $90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhZ-zd-lV6">
+                                <rect key="frame" x="126.5" y="576" width="116" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="sDl-Ts-n02"/>
                                 </constraints>
@@ -1222,8 +1196,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pool: $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFu-hu-4xU">
-                                <rect key="frame" x="137" y="579" width="95" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pool: $90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFu-hu-4xU">
+                                <rect key="frame" x="126.5" y="579" width="116" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="4z4-Hg-hWA"/>
                                 </constraints>
@@ -1239,19 +1213,6 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Le3-RC-Iwa" customClass="CircleAnimatedMenu" customModule="CircleAnimatedMenu">
                                 <rect key="frame" x="40" y="72" width="300" height="315"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="dNg-gu-XUS">
-                                        <rect key="frame" x="100" y="97" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="PT8-A6-FRO"/>
-                                            <constraint firstAttribute="height" constant="100" id="cSm-qA-vk9"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="dNg-gu-XUS" firstAttribute="centerX" secondItem="Le3-RC-Iwa" secondAttribute="centerX" id="pCx-fy-WgU"/>
-                                    <constraint firstItem="dNg-gu-XUS" firstAttribute="top" secondItem="Le3-RC-Iwa" secondAttribute="top" constant="113" id="ttK-wJ-qO3" userLabel="Image.top = top + 125"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="innerCircleColor">
                                         <color key="value" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1377,7 +1338,6 @@
                     <connections>
                         <outlet property="dateLabel" destination="u0R-QK-Pke" id="IsP-8F-UAb"/>
                         <outlet property="detailsLabel" destination="bOt-lW-PLm" id="9Yl-2i-Y8Z"/>
-                        <outlet property="image" destination="dNg-gu-XUS" id="nhS-kt-zmG"/>
                         <outlet property="locationLabel" destination="I5Y-FW-pg2" id="Y3t-Lr-vQc"/>
                         <outlet property="priceLabel" destination="fL8-5i-3MC" id="TBM-yy-09r"/>
                         <outlet property="testMenu" destination="Le3-RC-Iwa" id="BHw-ja-3A1"/>

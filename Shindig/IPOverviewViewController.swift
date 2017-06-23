@@ -32,14 +32,12 @@ class IPOverviewViewController: UIViewController {
         testMenu.innerRadius = 50
         testMenu.closerBorderWidth = 0
         testMenu.menuWidthLine = 1
-        testMenu.titleFont = UIFont.systemFont(ofSize: 14)
+        testMenu.titleFont = UIFont.systemFont(ofSize: 9)
         testMenu.delegate = self as? CircleAnimatedMenuDelegate
         testMenu.highlightedColors = [.green, .yellow, .purple, .red, .brown]
-        testMenu.tuplesArray = [("Facebook-1", "Facebook"), ("instagram-1", "Instagram"), ("Twitter", "Twitter"),
-                                ("LinkedIn", "LinkedIn"), ("Google Plus +", "GooglePlus"), ("Pinterest", "Pinterest"),
-                                ("RSS", "RSS"), ("YouTube", "YouTube"), ("Bloglovin", "Bloglovin"),
-                                ("Emai", "Email"), ("Flickr", "Flickr"), ("github", "GitHub")]
-        
+        testMenu.tuplesArray = [("Emily", "Emily"), ("Ryann", "Ryann"), ("Elise", "Elise"),
+                                ("Katherine", "Katherine"), ("Fran", "Fran"), ("Claire", "Claire"),
+                                ("Hannah", "Hannah"), ("Grace", "Grace"), ("Lea", "Lea")]
         
         var ref = Database.database().reference().child("Events").child(key!)
         var dat = ref.observe(.value, with: { (snapshot) in
