@@ -19,6 +19,7 @@
 		9240D4B61EFAF82200F54FC3 /* AddSupplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9240D4B51EFAF82200F54FC3 /* AddSupplyViewController.swift */; };
 		927862AE1EFBC933005A7E3D /* ShindigAttendingRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927862AD1EFBC933005A7E3D /* ShindigAttendingRealm.swift */; };
 		927862B01EFBD09B005A7E3D /* SignUpForSupplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927862AF1EFBD09B005A7E3D /* SignUpForSupplyViewController.swift */; };
+		927862B21EFD2A87005A7E3D /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927862B11EFD2A87005A7E3D /* MyTabBarViewController.swift */; };
 		A10A442A1EF944DD00DBA48B /* PlanningShindigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A44291EF944DD00DBA48B /* PlanningShindigTableViewController.swift */; };
 		A10A442C1EF944F800DBA48B /* AttendingShindigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A442B1EF944F800DBA48B /* AttendingShindigTableViewController.swift */; };
 		A10A44341EF945BC00DBA48B /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A44331EF945BC00DBA48B /* ProfileTableViewController.swift */; };
@@ -48,6 +49,7 @@
 		9240D4B51EFAF82200F54FC3 /* AddSupplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSupplyViewController.swift; sourceTree = "<group>"; };
 		927862AD1EFBC933005A7E3D /* ShindigAttendingRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShindigAttendingRealm.swift; sourceTree = "<group>"; };
 		927862AF1EFBD09B005A7E3D /* SignUpForSupplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpForSupplyViewController.swift; sourceTree = "<group>"; };
+		927862B11EFD2A87005A7E3D /* MyTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
 		A10A44291EF944DD00DBA48B /* PlanningShindigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningShindigTableViewController.swift; sourceTree = "<group>"; };
 		A10A442B1EF944F800DBA48B /* AttendingShindigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendingShindigTableViewController.swift; sourceTree = "<group>"; };
 		A10A44331EF945BC00DBA48B /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				9240D4851EF92DA600F54FC3 /* GoogleService-Info.plist */,
 				9240D47F1EF9225300F54FC3 /* Info.plist */,
 				DCF1F0031EFAA2D400FA98C9 /* FBFriendPickerViewController.swift */,
+				927862B11EFD2A87005A7E3D /* MyTabBarViewController.swift */,
 			);
 			path = Shindig;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				A10A44361EF9466E00DBA48B /* HPOverviewViewController.swift in Sources */,
 				DCF1F0041EFAA2D400FA98C9 /* FBFriendPickerViewController.swift in Sources */,
 				A10A44341EF945BC00DBA48B /* ProfileTableViewController.swift in Sources */,
+				927862B21EFD2A87005A7E3D /* MyTabBarViewController.swift in Sources */,
 				9240D4761EF9225300F54FC3 /* ViewController.swift in Sources */,
 				A10A442A1EF944DD00DBA48B /* PlanningShindigTableViewController.swift in Sources */,
 				9240D4741EF9225200F54FC3 /* AppDelegate.swift in Sources */,

@@ -34,7 +34,7 @@ class IPOverviewViewController: UIViewController {
         testMenu.menuWidthLine = 1
         testMenu.titleFont = UIFont.systemFont(ofSize: 9)
         testMenu.delegate = self as? CircleAnimatedMenuDelegate
-        testMenu.highlightedColors = [.green, .yellow, .purple, .red, .brown]
+        testMenu.highlightedColors = [.cyan, .yellow, .purple, .red, .brown]
         testMenu.tuplesArray = [("Emily", "Emily"), ("Ryann", "Ryann"), ("Elise", "Elise"),
                                 ("Katherine", "Katherine"), ("Fran", "Fran"), ("Claire", "Claire"),
                                 ("Hannah", "Hannah"), ("Grace", "Grace"), ("Lea", "Lea")]

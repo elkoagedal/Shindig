@@ -39,7 +39,7 @@ class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
         testMenu.menuWidthLine = 1
         testMenu.titleFont = UIFont.systemFont(ofSize: 9)
         testMenu.delegate = self
-        testMenu.highlightedColors = [.blue, .orange, .yellow, .green, .blue, .cyan, .purple]
+        testMenu.highlightedColors = [.cyan, .orange, .yellow, .green, .blue, .cyan, .purple]
         testMenu.tuplesArray = [("Emily", "Emily"), ("Ryann", "Ryann"), ("Elise", "Elise"),
                                 ("Katherine", "Katherine"), ("Fran", "Fran"), ("Claire", "Claire"),
                                 ("Hannah", "Hannah"), ("Grace", "Grace"), ("Lea", "Lea")]
@@ -96,14 +96,8 @@ class HPOverviewViewController: UIViewController, CircleAnimatedMenuDelegate {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-       // image.layer.zPosition = 1001
-        image.layer.zPosition = 1
-    }
     
     func sectionSelected(text: String, index: Int) {
-        print(text)
-        image.image = #imageLiteral(resourceName: "add")
     }
 
 /*

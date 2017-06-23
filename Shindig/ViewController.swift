@@ -67,8 +67,8 @@ class ViewController: UIViewController, LoginButtonDelegate {
             }
         }
         */
-        //let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
-        //self.present(ViewController!, animated: true, completion: nil)
+       // let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
+       // self.present(ViewController!, animated: true, completion: nil)
         
 
         
@@ -148,6 +148,7 @@ class ViewController: UIViewController, LoginButtonDelegate {
             }
         })
         connection.start()
+        
 
         //let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "mainView")
         //self.present(ViewController!, animated: true, completion: nil)
